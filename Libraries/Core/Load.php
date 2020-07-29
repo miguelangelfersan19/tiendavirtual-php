@@ -1,5 +1,6 @@
 <?php
-$controllerFile = "controllers/".$controller.".php";
+$controller = ucwords($controller); // primera letra en mayuscula
+$controllerFile = "Controllers/".$controller.".php";
 if(file_exists($controllerFile))
 {
     require_once($controllerFile);
@@ -9,11 +10,11 @@ if(file_exists($controllerFile))
       {
        $controller->{$method}($params);
      }else{
-     require_once("Controllers/error.php");
+     require_once("Controllers/Error.php");
      }
 
 } else{
-     require_once("Controllers/error.php");
+     require_once("Controllers/Error.php");
 }
 
 ?>

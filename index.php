@@ -1,7 +1,9 @@
 <?php
 
 //requerir archivos
-require_once("config/config.php");
+require_once("Config/Config.php");
+require_once("Helpers/Helpers.php"); //debse ser cargadi despues de config por uso de datos
+
 $url =!empty($_GET['url']) ? $_GET['url'] : 'home/home';
 $arrUrl = explode("/", $url);
 $controller = $arrUrl[0];
@@ -28,10 +30,10 @@ if(!empty($arrUrl[2]))
      }
  }
 
- require_once("Libraries/core/Autoload.php");
+ require_once("Libraries/Core/Autoload.php");
 
 //load
-require_once("Libraries/core/Load.php");
+require_once("Libraries/Core/Load.php");
 
 /*
 echo "<br>";

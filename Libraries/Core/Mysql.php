@@ -17,6 +17,7 @@ class Mysql extends Conexion
  {
     $this->strquery = $query;
     $this->arrVAlues = $arrValues;
+
     $insert = $this->conexion->prepare($this->strquery);
     $resInsert = $insert->execute($this->arrVAlues);
     if ($resInsert) 
@@ -28,6 +29,7 @@ class Mysql extends Conexion
    return $lasInsert;
   }
 
+  
   //buscar un registro
   public function select(string $query)
   {
@@ -39,9 +41,9 @@ class Mysql extends Conexion
   }
 
   //Devolver todos los registros
-  public function select_all(string $query){
-  
-    $this->strquey =$query;
+  public function select_all(string $query)
+  {
+    $this->strquery =$query;
     $result =$this->conexion->prepare($this->strquery);
     $result->execute();
     $data =$result->fetchall(PDO::FETCH_ASSOC); //basca mas de un registro
@@ -60,8 +62,8 @@ class Mysql extends Conexion
   public function delete (string $query){
     $this->strquery = $query;
     $result = $this->conexion->prepare($this->strquery);
-    $result->execute();
-    return $result;
+    $del = $result->execute();
+    return $del;
 
   }
 
