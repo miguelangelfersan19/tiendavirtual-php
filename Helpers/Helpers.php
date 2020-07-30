@@ -23,6 +23,11 @@
         }
     
     
+        function getModal(string $nameModal, $data){
+           $view_modal = "Views/Template/Modals/{$nameModal}.php";
+           require_once $view_modal;
+        }
+
     //muestra la informacion formateada
     function dep($data){
         $format = print_r('<pre>');
