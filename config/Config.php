@@ -2,7 +2,7 @@
 
 // define("Base_url", "http://http://localhost/tiendavirtual/")
 
-const Base_url="http://localhost/tiendavirtual";
+const Base_url="http://localhost/tiendavirtual"; // quite el / al final
 
 //Establecer zona horaria 
 date_default_timezone_set('America/Bogota');

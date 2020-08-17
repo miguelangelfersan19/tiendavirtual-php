@@ -3,3 +3,13 @@
     background: gray;
     padding: 6pxs;
 }
+
+.headerRegister {
+    background: #009688;
+    color: #FFF;
+}
+
+.headerUpdate {
+    background: #007bff;
+    color: #FFF;
+}

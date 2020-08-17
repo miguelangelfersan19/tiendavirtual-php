@@ -32,6 +32,7 @@
                       <th>Nombre</th>
                       <th>Descripcion</th>
                       <th>Status</th>
+                      <th>Acciones</th>
                      </tr>
                   </thead>
                   <tbody>
