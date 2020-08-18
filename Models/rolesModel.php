@@ -6,7 +6,7 @@ class RolesModel extends mysql{
   public $intIdrol;
   public $strRol;
   public $strDescripcion;
-  public $intStaus;
+  public $intStatus;
 
     public function __construct(){
       parent::__construct();
@@ -33,7 +33,7 @@ class RolesModel extends mysql{
       if (empty($request))
       {
         $query_insert ="INSERT INTO rol (nombrerol, descripcion, status) VALUES(?,?,?)";
-        $arrData = array($this->strRol, $this->strDescripcion, $this->intStaus); // arma el array 
+        $arrData = array($this->strRol, $this->strDescripcion, $this->intStatus); // arma el array 
         $request_inert = $this->insert($query_insert, $arrData);
         $return = $request_inert;
       }else{

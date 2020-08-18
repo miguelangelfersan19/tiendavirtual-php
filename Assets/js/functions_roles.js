@@ -46,18 +46,21 @@ document.addEventListener('DOMContentLoaded', function() {
         request.send(formData); // envia los datos
         request.onreadystatechange = function() {
             if (request.readyState == 4 && request.status == 200) {
-                var obData = JSON.parse(request.responseText);
-                if (obData.status) {
+
+                var objData = JSON.parse(request.responseText);
+
+                if (objData.status) {
+
                     $('#modalFormRol').modal("hide");
                     formRol.reset();
-                    swal("Roles de usuario", obData.msg, "success");
-                    tableRoles.ajax.reload(function() {
+                    swal("Roles de usuario", objData.msg, "success");
+                    tableRoles.ajax.reload(function() { // tableRoles.api().ajax.reload(function() {
                         //fntEditRol();
                         //fntDelRol();
                         //fntPermisos();
                     });
                 } else {
-                    swal("Error", obData.msg, "error");
+                    swal("Error", objData.msg, "error");
                 }
             }
         }
@@ -72,12 +75,12 @@ $('#tableRoles').DataTable();
 
 
 function openModal() {
-    document.querySelector('#idRol'.value = ""); //limpia las cajas de texto del formulario de nuevo
-    document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
-    document.querySelector(' #btnActionForm').classList.replace("btn-info", "btn-primary");
-    document.querySelector(' #btnText').innerHTML = "Guardar";
-    document.querySelector(' #titleModal').innerHTML = "Nuevo Rol";
-    document.querySelector(' #formRol').reset(); //reseta el formulario
+    // document.querySelector('#idRol'.value = ""); //limpia las cajas de texto del formulario de nuevo
+    //document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
+    //document.querySelector(' #btnActionForm').classList.replace("btn-info", "btn-primary");
+    //document.querySelector(' #btnText').innerHTML = "Guardar";
+    //document.querySelector(' #titleModal').innerHTML = "Nuevo Rol";
+    //document.querySelector(' #formRol').reset(); //reseta el formulario
     $('#modalFormRol').modal('show');
 }
 

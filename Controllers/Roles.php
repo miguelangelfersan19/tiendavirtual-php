@@ -51,7 +51,7 @@ class Roles extends Controllers{
             $arrResponse= array("status"=> false,'msg'=>'No es posible almacenar los datos.');
            }
             echo json_encode($arrResponse.JSON_UNESCAPED_UNICODE);
-            die();
+            die(); //detiene el proceso
         
     }
 }
