@@ -20,6 +20,14 @@ class RolesModel extends mysql{
         return $request;
     }
 
+    public function selectRol(int $idrol){
+      $this->intIdrol = $idrol;
+      $sql = "SELECT * FROM rol WHERE idrol = $this->intIdrol";
+      $request = $this->select($sql);
+      return $request;
+
+    }
+
     public function insertRol(string $rol , string $descripcion, int $status ){
 
       $return ="";
@@ -32,7 +40,7 @@ class RolesModel extends mysql{
 
       if (empty($request))
       {
-        $query_insert ="INSERT INTO rol (nombrerol, descripcion, status) VALUES(?,?,?)";
+        $query_insert ="INSERT INTO rol (nombrerol, descripcion,status) VALUES(?,?,?)";
         $arrData = array($this->strRol, $this->strDescripcion, $this->intStatus); // arma el array 
         $request_inert = $this->insert($query_insert, $arrData);
         $return = $request_inert;
