@@ -1,9 +1,8 @@
 
 <?php headerAdmin($data); 
-  getModal('modalRoles',$data);
+  getModal('modalUsuarios',$data);
 
 ?>
-<div id="contentAjax"></div>
     <main class="app-content">
       <div class="app-title">
         <div>
@@ -26,18 +25,29 @@
           <div class="tile">
             <div class="tile-body">
               <div class="table-responsive">
-                <table class="table table-hover table-bordered" id="tableRoles">
+                <table class="table table-hover table-bordered" id="tableUsuarios">
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Nombre</th>
-                      <th>Descripcion</th>
+                      <th>Nombres</th>
+                      <th>Apellidos</th>
+                      <th>Email</th>
+                      <th>Telèfonos</th>
+                      <th>Rol</th>
                       <th>Status</th>
                       <th>Acciones</th>
                      </tr>
                   </thead>
                   <tbody>
-                    
+                    <tr>
+                   <td>1</td> 
+                   <td>Miguel</td>
+                   <td>Sanjuanelo</td>
+                   <td>miguelangelfersan19@gmail.com</td>
+                   <td>3000000</td>
+                   <td>Administrador</td>
+                   <td>Activo</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>

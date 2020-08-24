@@ -11,17 +11,19 @@ class Roles extends Controllers{
 
         $data['page_id'] = 3;
         $data['page_tag']= "Roles Usuario";
-        $data['page_name']= "Rol_usuario";
+        $data['page_name']= "rol_usuario";
         $data['page_title'] = "Roles Usuarios <small> Tienda Virtual </small>";
            $this->views->getView($this,"roles",$data);
     }
 
     
-    public function getRoles(){
+    public function getRoles()
+    {
         $arrData =$this->model->selectRoles();
        // dep($arrData[0] ['status']);exit; // busca la posicion una y el status
         for ($i=0; $i < count($arrData) ; $i++) { 
-            if ($arrData[$i]['status']==1) {
+            if ($arrData[$i]['status']==1) 
+            {
                 $arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
             }else{
                 $arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
@@ -31,9 +33,9 @@ class Roles extends Controllers{
             <button class="btn btn-primary btn-sm btnEditRol " rl ="'.$arrData[$i]['idrol'].'" title="Editar"> <i class="fas fa-pencil-alt"></i></button>
             <button class="btn btn-danger btn-sm btnDelRol " rl ="'.$arrData[$i]['idrol'].'" title="Eliminar"> <i class="fas fa-trash-alt"></i></button>
             </div>';
-        }
+        }   
         echo json_encode($arrData,JSON_UNESCAPED_UNICODE); //combierte a formato json
-        die();
+            die();
      }
 
         // extraer un solo rol 
